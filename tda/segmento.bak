@@ -1,0 +1,32 @@
+#lang r5rs
+
+;puntos
+(define (make-point x y) (cons x y))
+
+(define (coord-x punto) (car punto))
+
+(define (coord-y punto) (cdr punto))
+
+;segmentos
+(define (make-segment inicio final) (cons inicio final))
+
+(define (start-segment segment) (car segment))
+
+(define (end-segment segment) (cdr segment))
+
+;procedures
+(define (promedio-x a b)
+    (/ (+ (coord-x a) (coord-x b))  2)
+)
+(define (promedio-y a b)
+    (/ (+ (coord-y a) (coord-y b))  2)
+)
+
+(define (punto-medio segmento)
+    ;obtenemos punto de inicio y final
+    (let ((inicio (start-segment segmento))
+          (final (end-segment segmento)))
+        (let ((x1) (coord-x inicio)))))
+
+
+(display (punto-medio (make-segment '(0 . 0) '(1 . 1))))
