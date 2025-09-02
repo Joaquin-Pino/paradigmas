@@ -67,8 +67,8 @@
 ;;sumar elementos de la lista
 (define (sumar-lista lista)
   (if (null? lista)
-      0
-      (+ (car lista) (sumar-lista (cdr lista)))))
+       0
+       (+ (car lista) (sumar-lista (cdr lista)))))
 
 (sumar-lista '(1 2 3 4 5 6))
 
@@ -83,29 +83,4 @@
 
 
 ;; crear filter propio
-(define (mi-filtro condicion lista)
-  (if (null? lista)
-      '()
-      (let ((inicio (car lista))
-            (resto-lista (cdr lista)))
-        
-        (if (condicion inicio)
-            (cons inicio (mi-filtro condicion resto-lista))
-            (mi-filtro condicion resto-lista)))))
-
-(mi-filtro odd? '(1 2 3 4 5 6 7 8 9 10))
-      
-
-;;encontar numero mayor en lista
-
-(define (max lista)
-  (if (null? (cdr lista))
-      (car lista)
-      (let ((resto-lista (cdr lista))
-            (primero-lista (car lista)))
-             (if (< primero-lista (car resto-lista))
-                 (max resto-lista)
-                 (max (cons primero-lista (cdr resto-lista)))))))
-                 
-
-(max '(767 3 10000 378))
+;TODO
