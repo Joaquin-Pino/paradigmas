@@ -107,5 +107,25 @@
                  (max resto-lista)
                  (max (cons primero-lista (cdr resto-lista)))))))
                  
-
 (max '(767 3 10000 378))
+
+(define (construir n)
+  (define (iter cnt)
+    (if (= n cnt)
+        (cons cnt '())
+        (cons cnt (iter (+ cnt 1)))))
+  (iter 1))
+
+(construir 5)
+
+
+(define (cambiar n lista nuevo)
+  (if (= n 0)
+   (cons nuevo (cdr lista))
+   (cons (car lista) (cambiar (- n 1) (cdr lista) nuevo))
+  )
+)
+
+(cambiar  4 (construir 10) "hola")
+
+
